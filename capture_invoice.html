@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capture Invoice</title>
+</head>
+<body>
+    <h2>Capture New Invoice</h2>
+
+    <form method="post" action="{{ url_for('capture_invoice') }}">
+        <label for="vendor_name">Vendor Name:</label>
+        <input type="text" name="vendor_name" required><br>
+
+        <label for="amount">Amount:</label>
+        <input type="number" name="amount" step="0.01" required><br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <p><a href="{{ url_for('display_invoices') }}">Back to Invoices</a></p>
+</body>
+</html>
