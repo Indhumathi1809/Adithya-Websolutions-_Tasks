@@ -1,0 +1,52 @@
+<!-- templates/clear_database.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            color: #4caf50;
+            letter-spacing: 2px;
+            text-align: center;
+        }
+
+        p {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        a {
+            display: inline-block;
+            padding: 8px 16px;
+            margin-top: 20px;
+            background-color: #4caf50;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+
+        a:hover {
+            background-color: #45a049;
+        }
+    </style>
+    <title>Clear Database</title>
+</head>
+<body>
+    <h1>Clear Database</h1>
+    <p>Are you sure you want to clear the entire database?</p>
+    <form method="POST" action="{{ url_for('clear_database') }}">
+        <button type="submit">Clear Database</button>
+    </form>
+    <a href="{{ url_for('display_invoices') }}">Cancel</a>
+</body>
+</html>
